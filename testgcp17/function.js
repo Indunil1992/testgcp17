@@ -9,14 +9,14 @@ exports.handler = function (request, response) {
     })
         .then(response => {
             console.log(response.data);           // successful response
-            console.log("successssss");
+            console.log("successs");
             /*
                 response.data = {}
             */
         })
         .catch(err => {
             console.log(err, err.stack); // an error occurred
-            console.log("failllll");
+            console.log("faill");
         });
 
     response.send({ "message": "Successfully executed" });
