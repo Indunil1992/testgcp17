@@ -1,0 +1,106 @@
+{
+  "EDITOR_STATE": {
+    "allProjectFiles": {
+      "75014fc3-f961-4062-8f51-bbf49dd914b8": {
+        "id": "75014fc3-f961-4062-8f51-bbf49dd914b8",
+        "parent": null,
+        "name": "testgcp17",
+        "type": "DIRECTORY",
+        "isDirectory": true,
+        "children": [
+          "faf80e14-5b85-4629-b998-5efbf50680d0"
+        ],
+        "isRemovable": false,
+        "filePath": "testgcp17"
+      },
+      "faf80e14-5b85-4629-b998-5efbf50680d0": {
+        "id": "faf80e14-5b85-4629-b998-5efbf50680d0",
+        "parent": "75014fc3-f961-4062-8f51-bbf49dd914b8",
+        "name": "function.js",
+        "type": "JS_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "testgcp17/function.js",
+        "code": "exports.handler = function(request, response) {\n    \n    response.send({\"message\": \"Successfully executed\"});\n}",
+        "config": {
+          "runtime": "nodejs8",
+          "timeout": 60,
+          "memory": 128,
+          "triggerType": 1
+        },
+        "triggers": [
+          {
+            "resourceName": "storageinduniltest1",
+            "config": {
+              "type": "google.storage.object.metadataUpdate"
+            }
+          }
+        ]
+      },
+      "cdae3dd2-00af-458f-937e-b7dc64dddf1c": {
+        "id": "cdae3dd2-00af-458f-937e-b7dc64dddf1c",
+        "parent": null,
+        "name": "index.js",
+        "type": "JS_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": false,
+        "filePath": "index.js",
+        "code": "// This file is used to register all your cloud functions in GCP.\n// DO NOT EDIT/DELETE THIS, UNLESS YOU KNOW WHAT YOU ARE DOING.\n\nexports.testgcp17function = require(\"./testgcp17/function.js\").handler;"
+      },
+      "3f9c812b-1fe1-439d-bddf-5b3d7ecfef89": {
+        "id": "3f9c812b-1fe1-439d-bddf-5b3d7ecfef89",
+        "parent": null,
+        "name": "main.py",
+        "type": "PYTHON_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": false,
+        "filePath": "main.py",
+        "code": "# This file is used to register all your cloud functions in GCP.\n# DO NOT EDIT/DELETE THIS, UNLESS YOU KNOW WHAT YOU ARE DOING.\n\n"
+      }
+    },
+    "rootNode": "75014fc3-f961-4062-8f51-bbf49dd914b8",
+    "openFiles": [
+      "faf80e14-5b85-4629-b998-5efbf50680d0"
+    ],
+    "currentFileId": "faf80e14-5b85-4629-b998-5efbf50680d0",
+    "resources": {
+      "storageinduniltest1": {
+        "name": "storageinduniltest1",
+        "type": "storage",
+        "config": {
+          "mode": 0,
+          "bucket": {
+            "name": "induniltest1"
+          }
+        }
+      }
+    },
+    "customTemplate": {
+      "dialect": null,
+      "definitions": null
+    },
+    "envVariables": [],
+    "packageJSON": {
+      "dependencies": {}
+    }
+  },
+  "PROJECT_META": {
+    "projectName": "testgcp17",
+    "projectDescription": "",
+    "projectVersion": "1.0.0",
+    "projectRegion": "us-east1",
+    "platform": "GCP",
+    "platformRegions": {},
+    "lastSave": 1568694179488
+  },
+  "VCS_STATE": {
+    "provider": "GitHub",
+    "repo": {
+      "name": "testgcp17",
+      "url": "https://github.com/Indunil1992/testgcp17"
+    }
+  }
+}
