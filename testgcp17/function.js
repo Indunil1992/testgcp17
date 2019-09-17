@@ -6,11 +6,11 @@ exports.handler = function (request, response) {
     storage.objects.list({
         bucket: 'induniltest1',
         maxResults: 10,
-        prefix: ''
+        prefix: '1'
     })
         .then(response => {
             console.log(response.data);           // successful response
-             console.log("successssss");
+            console.log("successssss");
             /*
     
             WARNING: response.data.items will be missing altogether (instead of being empty) if there are no matches!  
@@ -45,7 +45,7 @@ exports.handler = function (request, response) {
         .catch(err => {
             console.log(err, err.stack); // an error occurred
             console.log(err);
-             console.log("errrrrrrrrrrrrrrrrrrrrrr");
+            console.log("errrrrrrrrrrrrrrrrrrrrrr");
         });
 
     response.send({ "message": "Successfully executed" });
