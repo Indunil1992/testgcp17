@@ -3,49 +3,20 @@ let _auth = require('./Authorizer');
 const storage = google.storage('v1');
 
 exports.handler = function (request, response) {
-    storage.objects.list({
-        bucket: 'induniltest1',
-        maxResults: 10,
-        prefix: '1'
+    storage.objects.delete({
+        bucket: "induniltest1",
+        object: "1.PNG"
     })
         .then(response => {
             console.log(response.data);           // successful response
             console.log("successssss");
             /*
-    
-            WARNING: response.data.items will be missing altogether (instead of being empty) if there are no matches!  
-    
-            response.data = {
-                "kind": "storage#objects",
-                "items": [
-                    {
-                        "kind": "storage#object",
-                        "id": "<bucket>/<object>/<timestamp>",
-                        "selfLink": "https://www.googleapis.com/storage/v1/b/<bucket>/o/<object>",
-                        "name": "<object>",
-                        "bucket": "<bucket>",
-                        "contentType": "<content-type>",
-                        "timeCreated": "<yyyy-MM-ddTHH:mm:ss.###Z>",
-                        "updated": "<yyyy-MM-ddTHH:mm:ss.###Z>",
-                        "size": "<bytes>",
-                        "md5Hash": "<hash>",
-                        "metadata": {
-                            "<key1>": "<val1>",
-                            "<key2>": "<val2>"
-                        },
-                        "crc32c": "<crc>",
-                        "etag": "<etag>"
-                        // , ...
-                    }
-                    // , ...
-                ]
-            }
+                response.data = {}
             */
         })
         .catch(err => {
             console.log(err, err.stack); // an error occurred
-            console.log(err);
-            console.log("errrrrrrrrrrrrrrrrrrrrrr");
+            console.log("failllll");
         });
 
     response.send({ "message": "Successfully executed" });
